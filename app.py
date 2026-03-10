@@ -1,6 +1,9 @@
 import json
 import streamlit as st
 import pandas as pd
+from streamlit_local_storage import LocalStorage
+
+local_storage = LocalStorage()
 
 st.set_page_config(page_title="Crisis Annotation", layout="wide")
 
@@ -128,17 +131,11 @@ def login():
     with col:
         st.subheader("Who are you?")
         annotator = st.selectbox("Select your name", list(DATA_FILES.keys()))
-        resume_file = st.file_uploader("Resume from a previous session (optional)", type="csv")
 
         if st.button("Start annotating", type="primary"):
-            annotations = {}
-            if resume_file:
-                df = pd.read_csv(resume_file)
-                for _, row in df.iterrows():
-                    annotations[str(row["conversation_id"])] = {
-                        "is_crisis": row["is_crisis"],
-                        "rating": int(row["rating"]),
-                    }
+            # Auto-load from localStorage if available
+            saved = local_storage.getItem(f"annotations_{annotator}")
+            annotations = json.loads(saved) if saved else {}
 
             st.session_state.annotator = annotator
             st.session_state.annotations = annotations
@@ -152,6 +149,8 @@ def login():
             )
             st.session_state.idx = first_unannotated
             st.rerun()
+
+        st.caption("Your progress is saved automatically in your browser.")
 
 
 # ── Annotation screen ─────────────────────────────────────────────────────────
@@ -237,13 +236,15 @@ def annotate():
         if st.button(save_label, type="primary", disabled=(is_crisis is None)):
             annotations[conv_id] = {"is_crisis": is_crisis, "rating": rating}
             st.session_state.annotations = annotations
+            local_storage.setItem(f"annotations_{annotator}", json.dumps(annotations))
             if idx < total - 1:
                 st.session_state.idx += 1
             st.rerun()
 
         st.divider()
+        st.caption(f"✅ {len(annotations)} / {total} saved")
         st.download_button(
-            "💾 Download progress",
+            "💾 Export CSV (backup)",
             data=get_csv(annotations),
             file_name=f"{annotator}_annotations.csv",
             mime="text/csv",
