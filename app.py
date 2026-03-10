@@ -1,15 +1,109 @@
 import json
 import streamlit as st
 import pandas as pd
-from pathlib import Path
 
 st.set_page_config(page_title="Crisis Annotation", layout="wide")
 
 DATA_FILES = {
-    "Annotator 1": "label_studio/annotator_1.json",
-    "Annotator 2": "label_studio/annotator_2.json",
-    "Annotator 3": "label_studio/annotator_3.json",
+    "Virgile":  "label_studio/annotator_1.json",
+    "Lula":     "label_studio/annotator_2.json",
+    "Yana":     "label_studio/annotator_3.json",
 }
+
+ACCENT = "#c0392b"  # deep red — fitting for a crisis project
+
+st.markdown(f"""
+<style>
+    /* Page background */
+    .stApp {{ background-color: #1a1a2e; }}
+
+    /* Main content area */
+    section[data-testid="stMain"] > div {{
+        background-color: #1a1a2e;
+    }}
+
+    /* Sidebar (unused but just in case) */
+    section[data-testid="stSidebar"] {{ background-color: #16213e; }}
+
+    /* All text white by default */
+    html, body, [class*="css"], p, label, span, div {{
+        color: #f0f0f0 !important;
+    }}
+
+    /* Conversation box */
+    .conv-box {{
+        background: #16213e;
+        border: 1px solid #c0392b55;
+        border-radius: 8px;
+        padding: 20px;
+        font-family: Georgia, serif;
+        font-size: 14px;
+        line-height: 1.9;
+        white-space: pre-wrap;
+        max-height: 540px;
+        overflow-y: auto;
+        color: #e8e8e8 !important;
+    }}
+
+    /* Form panel */
+    .form-panel {{
+        background: #16213e;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 20px;
+    }}
+
+    /* Dividers */
+    hr {{ border-color: #333 !important; }}
+
+    /* Progress bar colour */
+    .stProgress > div > div {{ background-color: {ACCENT} !important; }}
+
+    /* Primary buttons */
+    .stButton > button[kind="primary"] {{
+        background-color: {ACCENT} !important;
+        border: none !important;
+        color: white !important;
+        font-weight: 600;
+    }}
+    .stButton > button[kind="primary"]:hover {{
+        background-color: #a93226 !important;
+    }}
+
+    /* Secondary buttons */
+    .stButton > button {{
+        background-color: #2c2c54 !important;
+        border: 1px solid #444 !important;
+        color: #f0f0f0 !important;
+    }}
+
+    /* Radio buttons */
+    .stRadio label {{ color: #f0f0f0 !important; }}
+
+    /* Slider */
+    .stSlider label {{ color: #f0f0f0 !important; }}
+
+    /* Select box */
+    .stSelectbox label {{ color: #f0f0f0 !important; }}
+    .stSelectbox div[data-baseweb="select"] {{
+        background-color: #16213e !important;
+        border-color: #444 !important;
+    }}
+
+    /* Download button */
+    .stDownloadButton > button {{
+        background-color: #27ae60 !important;
+        border: none !important;
+        color: white !important;
+        font-weight: 600;
+        width: 100%;
+    }}
+
+    /* Title */
+    h1 {{ color: {ACCENT} !important; letter-spacing: 1px; }}
+    h2, h3 {{ color: #e0e0e0 !important; }}
+</style>
+""", unsafe_allow_html=True)
 
 
 @st.cache_data
@@ -23,41 +117,44 @@ def get_csv(annotations: dict) -> str:
     return pd.DataFrame(rows).to_csv(index=False)
 
 
-# ── Login screen ────────────────────────────────────────────────────────────
+# ── Login screen ─────────────────────────────────────────────────────────────
 
 def login():
     st.title("Crisis Annotation")
-    st.subheader("Who are you?")
+    st.markdown("<p style='color:#aaa; margin-top:-12px;'>Diplomatic conversations · 100 tasks per annotator</p>", unsafe_allow_html=True)
+    st.divider()
 
-    annotator = st.selectbox("Select your name", list(DATA_FILES.keys()))
-    resume_file = st.file_uploader("Resume from a previous session (optional)", type="csv")
+    col, _ = st.columns([1, 2])
+    with col:
+        st.subheader("Who are you?")
+        annotator = st.selectbox("Select your name", list(DATA_FILES.keys()))
+        resume_file = st.file_uploader("Resume from a previous session (optional)", type="csv")
 
-    if st.button("Start annotating", type="primary"):
-        annotations = {}
-        if resume_file:
-            df = pd.read_csv(resume_file)
-            for _, row in df.iterrows():
-                annotations[str(row["conversation_id"])] = {
-                    "is_crisis": row["is_crisis"],
-                    "rating": int(row["rating"]),
-                }
+        if st.button("Start annotating", type="primary"):
+            annotations = {}
+            if resume_file:
+                df = pd.read_csv(resume_file)
+                for _, row in df.iterrows():
+                    annotations[str(row["conversation_id"])] = {
+                        "is_crisis": row["is_crisis"],
+                        "rating": int(row["rating"]),
+                    }
 
-        st.session_state.annotator = annotator
-        st.session_state.annotations = annotations
+            st.session_state.annotator = annotator
+            st.session_state.annotations = annotations
 
-        # Jump to first unannotated task
-        tasks = load_tasks(annotator)
-        annotated_ids = set(annotations.keys())
-        first_unannotated = next(
-            (i for i, t in enumerate(tasks)
-             if str(t["data"]["conversation_id"]) not in annotated_ids),
-            0,
-        )
-        st.session_state.idx = first_unannotated
-        st.rerun()
+            tasks = load_tasks(annotator)
+            annotated_ids = set(annotations.keys())
+            first_unannotated = next(
+                (i for i, t in enumerate(tasks)
+                 if str(t["data"]["conversation_id"]) not in annotated_ids),
+                0,
+            )
+            st.session_state.idx = first_unannotated
+            st.rerun()
 
 
-# ── Annotation screen ────────────────────────────────────────────────────────
+# ── Annotation screen ─────────────────────────────────────────────────────────
 
 def annotate():
     annotator = st.session_state.annotator
@@ -70,55 +167,50 @@ def annotate():
     text = task["data"]["text"]
     existing = annotations.get(conv_id)
 
-    # ── Header row ──
-    header_left, header_right = st.columns([6, 2])
-    with header_left:
+    # ── Header ──
+    h1, h2 = st.columns([6, 2])
+    with h1:
         done = len(annotations)
-        st.progress(done / total, text=f"{done} / {total} annotated")
-    with header_right:
+        st.progress(done / total, text=f"{done} / {total} annotated  —  annotating as **{annotator}**")
+    with h2:
         if st.button("Change annotator"):
             for key in ("annotator", "annotations", "idx"):
                 st.session_state.pop(key, None)
             st.rerun()
 
     # ── Navigation ──
-    nav_left, nav_center, nav_right = st.columns([1, 8, 1])
-    with nav_left:
+    nav_l, nav_c, nav_r = st.columns([1, 8, 1])
+    with nav_l:
         if st.button("← Prev", disabled=(idx == 0)):
             st.session_state.idx -= 1
             st.rerun()
-    with nav_center:
+    with nav_c:
         status = "✅" if existing else "○"
         st.markdown(
-            f"<p style='text-align:center; color:grey;'>"
-            f"{status} Task {idx + 1} of {total} — <code>{conv_id}</code>"
+            f"<p style='text-align:center; color:#888;'>"
+            f"{status} Task {idx + 1} of {total} &nbsp;·&nbsp; <code style='color:#aaa'>{conv_id}</code>"
             f"</p>",
             unsafe_allow_html=True,
         )
-    with nav_right:
+    with nav_r:
         if st.button("Next →", disabled=(idx == total - 1)):
             st.session_state.idx += 1
             st.rerun()
 
     st.divider()
 
-    # ── Conversation text ──
+    # ── Main columns ──
     col_text, col_form = st.columns([3, 1])
 
     with col_text:
         st.markdown("**Conversation**")
         st.markdown(
-            f"<div style='"
-            f"background:#f8f8f8; border:1px solid #ddd; border-radius:6px;"
-            f"padding:16px; font-family:serif; font-size:14px; line-height:1.8;"
-            f"white-space:pre-wrap; max-height:520px; overflow-y:auto;'>"
-            f"{text}"
-            f"</div>",
+            f"<div class='conv-box'>{text}</div>",
             unsafe_allow_html=True,
         )
 
-    # ── Annotation form ──
     with col_form:
+        st.markdown("<div class='form-panel'>", unsafe_allow_html=True)
         st.markdown("**Your annotation**")
 
         is_crisis_options = ["Yes", "No"]
@@ -134,9 +226,8 @@ def annotate():
 
         rating_default = existing["rating"] if existing else 5
         rating = st.slider(
-            "Severity (1 = no crisis, 10 = acute crisis)",
-            min_value=1,
-            max_value=10,
+            "Severity (1 = no crisis · 10 = acute crisis)",
+            min_value=1, max_value=10,
             value=rating_default,
             key=f"r_{idx}",
         )
@@ -154,17 +245,17 @@ def annotate():
         st.download_button(
             "💾 Download progress",
             data=get_csv(annotations),
-            file_name=f"{annotator.replace(' ', '_')}_annotations.csv",
+            file_name=f"{annotator}_annotations.csv",
             mime="text/csv",
             disabled=(len(annotations) == 0),
         )
+        st.markdown("</div>", unsafe_allow_html=True)
 
-    # ── Done banner ──
     if len(annotations) == total:
         st.success("All done! Download your CSV above and send it back.")
 
 
-# ── Router ──────────────────────────────────────────────────────────────────
+# ── Router ────────────────────────────────────────────────────────────────────
 
 if "annotator" not in st.session_state:
     login()
