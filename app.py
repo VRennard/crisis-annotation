@@ -1,8 +1,9 @@
-import base64
 import json
 import streamlit as st
-import streamlit.components.v1 as components
 import pandas as pd
+import gspread
+from datetime import datetime
+from google.oauth2.service_account import Credentials
 
 st.set_page_config(page_title="Crisis Annotation", layout="wide")
 
@@ -12,13 +13,14 @@ DATA_FILES = {
     "Yana":     "label_studio/annotator_3.json",
 }
 
-ACCENT = "#c0392b"
+SHEET_ID = "1a2hf6GuBozc-mpdkTWaObTj2XlYrvN7KZ1ibc8ZqZpw"
+SCOPES   = ["https://www.googleapis.com/auth/spreadsheets"]
+ACCENT   = "#c0392b"
 
 st.markdown(f"""
 <style>
     .stApp {{ background-color: #1a1a2e; }}
     section[data-testid="stMain"] > div {{ background-color: #1a1a2e; }}
-    section[data-testid="stSidebar"] {{ background-color: #16213e; }}
     html, body, [class*="css"], p, label, span, div {{ color: #f0f0f0 !important; }}
     .conv-box {{
         background: #16213e;
@@ -73,6 +75,51 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 
+# ── Google Sheets connection ──────────────────────────────────────────────────
+
+@st.cache_resource
+def get_sheet():
+    creds = Credentials.from_service_account_info(
+        st.secrets["gcp_service_account"],
+        scopes=SCOPES,
+    )
+    client = gspread.authorize(creds)
+    sheet = client.open_by_key(SHEET_ID).sheet1
+    # Create header row if sheet is empty
+    if sheet.row_count == 0 or sheet.cell(1, 1).value != "annotator":
+        sheet.append_row(["annotator", "conversation_id", "is_crisis", "rating", "timestamp"])
+    return sheet
+
+
+def load_annotations_from_sheet(annotator: str) -> dict:
+    """Load all saved annotations for this annotator from the sheet."""
+    sheet = get_sheet()
+    records = sheet.get_all_records()
+    annotations = {}
+    for r in records:
+        if str(r.get("annotator")) == annotator:
+            # Later rows overwrite earlier ones (handles re-annotations)
+            annotations[str(r["conversation_id"])] = {
+                "is_crisis": r["is_crisis"],
+                "rating": int(r["rating"]),
+            }
+    return annotations
+
+
+def save_annotation_to_sheet(annotator: str, conv_id: str, is_crisis: str, rating: int):
+    """Append a row to the sheet."""
+    sheet = get_sheet()
+    sheet.append_row([
+        annotator,
+        conv_id,
+        is_crisis,
+        rating,
+        datetime.utcnow().isoformat(),
+    ])
+
+
+# ── Data loading ──────────────────────────────────────────────────────────────
+
 @st.cache_data
 def load_tasks(annotator: str):
     with open(DATA_FILES[annotator], encoding="utf-8") as f:
@@ -84,22 +131,7 @@ def get_csv(annotations: dict) -> str:
     return pd.DataFrame(rows).to_csv(index=False)
 
 
-def auto_download(annotator: str, annotations: dict):
-    """Silently trigger a CSV download in the browser."""
-    csv_bytes = get_csv(annotations).encode()
-    b64 = base64.b64encode(csv_bytes).decode()
-    filename = f"{annotator}_annotations.csv"
-    components.html(
-        f"""
-        <a id="dl" href="data:text/csv;base64,{b64}"
-           download="{filename}" style="display:none">dl</a>
-        <script>document.getElementById('dl').click();</script>
-        """,
-        height=0,
-    )
-
-
-# ── Login screen ─────────────────────────────────────────────────────────────
+# ── Login screen ──────────────────────────────────────────────────────────────
 
 def login():
     st.title("Crisis Annotation")
@@ -114,20 +146,13 @@ def login():
         st.subheader("Who are you?")
         annotator = st.selectbox("Select your name", list(DATA_FILES.keys()))
 
-        resume_file = st.file_uploader(
-            "Resume from a previous session (upload your backup CSV)",
-            type="csv",
-        )
-
         if st.button("Start annotating", type="primary"):
-            annotations = {}
-            if resume_file:
-                df = pd.read_csv(resume_file)
-                for _, row in df.iterrows():
-                    annotations[str(row["conversation_id"])] = {
-                        "is_crisis": row["is_crisis"],
-                        "rating": int(row["rating"]),
-                    }
+            with st.spinner("Loading your saved progress…"):
+                annotations = load_annotations_from_sheet(annotator)
+
+            n = len(annotations)
+            if n > 0:
+                st.success(f"Found {n} saved annotations — resuming where you left off.")
 
             st.session_state.annotator = annotator
             st.session_state.annotations = annotations
@@ -141,8 +166,6 @@ def login():
             )
             st.session_state.idx = first_unannotated
             st.rerun()
-
-        st.caption("A backup CSV downloads automatically after every annotation.")
 
 
 # ── Annotation screen ─────────────────────────────────────────────────────────
@@ -225,15 +248,15 @@ def annotate():
         if st.button(save_label, type="primary", disabled=(is_crisis is None)):
             annotations[conv_id] = {"is_crisis": is_crisis, "rating": rating}
             st.session_state.annotations = annotations
-            auto_download(annotator, annotations)
+            save_annotation_to_sheet(annotator, conv_id, is_crisis, rating)
             if idx < total - 1:
                 st.session_state.idx += 1
             st.rerun()
 
         st.divider()
-        st.caption(f"✅ {len(annotations)} / {total} saved")
+        st.caption(f"✅ {len(annotations)} / {total} saved to Google Sheets")
         st.download_button(
-            "💾 Download backup CSV",
+            "💾 Download CSV",
             data=get_csv(annotations),
             file_name=f"{annotator}_annotations.csv",
             mime="text/csv",
@@ -242,8 +265,7 @@ def annotate():
         st.markdown("</div>", unsafe_allow_html=True)
 
     if len(annotations) == total:
-        st.success("All done! Download your CSV above and send it back.")
-        auto_download(annotator, annotations)
+        st.success("All done! You can now download your CSV or just close the tab.")
 
 
 # ── Router ────────────────────────────────────────────────────────────────────
