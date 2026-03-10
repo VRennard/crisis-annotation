@@ -1,0 +1,27 @@
+<View>
+  <Style>
+    .conversation-box {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 16px;
+      font-family: serif;
+      font-size: 14px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      max-height: 500px;
+      overflow-y: auto;
+    }
+  </Style>
+
+  <Text name="text" value="$text" className="conversation-box"/>
+
+  <Header value="Is this a crisis-time conversation?"/>
+  <Choices name="is_crisis" toName="text" choice="single" showInline="true" required="true">
+    <Choice value="Yes"/>
+    <Choice value="No"/>
+  </Choices>
+
+  <Header value="Severity / intensity (1 = no crisis at all, 10 = acute crisis)"/>
+  <Rating name="rating" toName="text" maxRating="10" icon="star" size="medium" required="true"/>
+</View>
