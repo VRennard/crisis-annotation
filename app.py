@@ -107,15 +107,15 @@ def load_annotations_from_sheet(annotator: str) -> dict:
 
 
 def save_annotation_to_sheet(annotator: str, conv_id: str, is_crisis: str, rating: int):
-    """Append a row to the sheet."""
+    """Update existing row if present, otherwise append."""
     sheet = get_sheet()
-    sheet.append_row([
-        annotator,
-        conv_id,
-        is_crisis,
-        rating,
-        datetime.utcnow().isoformat(),
-    ])
+    all_values = sheet.get_all_values()  # [[col1, col2, ...], ...]
+    new_row = [annotator, conv_id, is_crisis, rating, datetime.utcnow().isoformat()]
+    for i, row in enumerate(all_values[1:], start=2):  # skip header, 1-indexed
+        if row[0] == annotator and row[1] == conv_id:
+            sheet.update(f"A{i}:E{i}", [new_row])
+            return
+    sheet.append_row(new_row)
 
 
 # ── Data loading ──────────────────────────────────────────────────────────────
