@@ -1,18 +1,8 @@
+import base64
 import json
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
-from streamlit_javascript import st_javascript
-
-
-def ls_get(key: str):
-    """Read from browser localStorage. Returns 0 while JS is loading, then the value."""
-    return st_javascript(f"localStorage.getItem('{key}')")
-
-
-def ls_set(key: str, value: dict):
-    """Write to browser localStorage."""
-    payload = json.dumps(value).replace("\\", "\\\\").replace("'", "\\'")
-    st_javascript(f"localStorage.setItem('{key}', '{payload}')")
 
 st.set_page_config(page_title="Crisis Annotation", layout="wide")
 
@@ -22,27 +12,15 @@ DATA_FILES = {
     "Yana":     "label_studio/annotator_3.json",
 }
 
-ACCENT = "#c0392b"  # deep red — fitting for a crisis project
+ACCENT = "#c0392b"
+AUTO_SAVE_EVERY = 10  # silently download a backup CSV every N annotations
 
 st.markdown(f"""
 <style>
-    /* Page background */
     .stApp {{ background-color: #1a1a2e; }}
-
-    /* Main content area */
-    section[data-testid="stMain"] > div {{
-        background-color: #1a1a2e;
-    }}
-
-    /* Sidebar (unused but just in case) */
+    section[data-testid="stMain"] > div {{ background-color: #1a1a2e; }}
     section[data-testid="stSidebar"] {{ background-color: #16213e; }}
-
-    /* All text white by default */
-    html, body, [class*="css"], p, label, span, div {{
-        color: #f0f0f0 !important;
-    }}
-
-    /* Conversation box */
+    html, body, [class*="css"], p, label, span, div {{ color: #f0f0f0 !important; }}
     .conv-box {{
         background: #16213e;
         border: 1px solid #c0392b55;
@@ -56,53 +34,33 @@ st.markdown(f"""
         overflow-y: auto;
         color: #e8e8e8 !important;
     }}
-
-    /* Form panel */
     .form-panel {{
         background: #16213e;
         border: 1px solid #333;
         border-radius: 8px;
         padding: 20px;
     }}
-
-    /* Dividers */
     hr {{ border-color: #333 !important; }}
-
-    /* Progress bar colour */
     .stProgress > div > div {{ background-color: {ACCENT} !important; }}
-
-    /* Primary buttons */
     .stButton > button[kind="primary"] {{
         background-color: {ACCENT} !important;
         border: none !important;
         color: white !important;
         font-weight: 600;
     }}
-    .stButton > button[kind="primary"]:hover {{
-        background-color: #a93226 !important;
-    }}
-
-    /* Secondary buttons */
+    .stButton > button[kind="primary"]:hover {{ background-color: #a93226 !important; }}
     .stButton > button {{
         background-color: #2c2c54 !important;
         border: 1px solid #444 !important;
         color: #f0f0f0 !important;
     }}
-
-    /* Radio buttons */
     .stRadio label {{ color: #f0f0f0 !important; }}
-
-    /* Slider */
     .stSlider label {{ color: #f0f0f0 !important; }}
-
-    /* Select box */
     .stSelectbox label {{ color: #f0f0f0 !important; }}
     .stSelectbox div[data-baseweb="select"] {{
         background-color: #16213e !important;
         border-color: #444 !important;
     }}
-
-    /* Download button */
     .stDownloadButton > button {{
         background-color: #27ae60 !important;
         border: none !important;
@@ -110,8 +68,6 @@ st.markdown(f"""
         font-weight: 600;
         width: 100%;
     }}
-
-    /* Title */
     h1 {{ color: {ACCENT} !important; letter-spacing: 1px; }}
     h2, h3 {{ color: #e0e0e0 !important; }}
 </style>
@@ -129,11 +85,29 @@ def get_csv(annotations: dict) -> str:
     return pd.DataFrame(rows).to_csv(index=False)
 
 
+def auto_download(annotator: str, annotations: dict):
+    """Silently trigger a CSV download in the browser."""
+    csv_bytes = get_csv(annotations).encode()
+    b64 = base64.b64encode(csv_bytes).decode()
+    filename = f"{annotator}_annotations.csv"
+    components.html(
+        f"""
+        <a id="dl" href="data:text/csv;base64,{b64}"
+           download="{filename}" style="display:none">dl</a>
+        <script>document.getElementById('dl').click();</script>
+        """,
+        height=0,
+    )
+
+
 # ── Login screen ─────────────────────────────────────────────────────────────
 
 def login():
     st.title("Crisis Annotation")
-    st.markdown("<p style='color:#aaa; margin-top:-12px;'>Diplomatic conversations · 100 tasks per annotator</p>", unsafe_allow_html=True)
+    st.markdown(
+        "<p style='color:#aaa; margin-top:-12px;'>Diplomatic conversations · 100 tasks per annotator</p>",
+        unsafe_allow_html=True,
+    )
     st.divider()
 
     col, _ = st.columns([1, 2])
@@ -141,38 +115,35 @@ def login():
         st.subheader("Who are you?")
         annotator = st.selectbox("Select your name", list(DATA_FILES.keys()))
 
-        # ls_get returns 0 while JS is loading, then the actual value (str or None)
-        saved_raw = ls_get(f"annotations_{annotator}")
+        resume_file = st.file_uploader(
+            "Resume from a previous session (upload your backup CSV)",
+            type="csv",
+        )
 
-        # Cache once we get real data
-        if saved_raw not in (0, None):
-            st.session_state[f"preloaded_{annotator}"] = json.loads(saved_raw)
+        if st.button("Start annotating", type="primary"):
+            annotations = {}
+            if resume_file:
+                df = pd.read_csv(resume_file)
+                for _, row in df.iterrows():
+                    annotations[str(row["conversation_id"])] = {
+                        "is_crisis": row["is_crisis"],
+                        "rating": int(row["rating"]),
+                    }
 
-        preloaded = st.session_state.get(f"preloaded_{annotator}", None)
+            st.session_state.annotator = annotator
+            st.session_state.annotations = annotations
 
-        if saved_raw == 0:
-            # JS still loading
-            st.button("Loading saved progress…", disabled=True)
-        else:
-            n = len(preloaded) if preloaded else 0
-            if n > 0:
-                st.caption(f"Found {n} saved annotations — resuming automatically.")
-            if st.button("Start annotating", type="primary"):
-                annotations = preloaded or {}
-                st.session_state.annotator = annotator
-                st.session_state.annotations = annotations
+            tasks = load_tasks(annotator)
+            annotated_ids = set(annotations.keys())
+            first_unannotated = next(
+                (i for i, t in enumerate(tasks)
+                 if str(t["data"]["conversation_id"]) not in annotated_ids),
+                0,
+            )
+            st.session_state.idx = first_unannotated
+            st.rerun()
 
-                tasks = load_tasks(annotator)
-                annotated_ids = set(annotations.keys())
-                first_unannotated = next(
-                    (i for i, t in enumerate(tasks)
-                     if str(t["data"]["conversation_id"]) not in annotated_ids),
-                    0,
-                )
-                st.session_state.idx = first_unannotated
-                st.rerun()
-
-        st.caption("Your progress is saved automatically in your browser.")
+        st.caption(f"Every {AUTO_SAVE_EVERY} annotations a backup CSV downloads automatically.")
 
 
 # ── Annotation screen ─────────────────────────────────────────────────────────
@@ -209,8 +180,8 @@ def annotate():
         status = "✅" if existing else "○"
         st.markdown(
             f"<p style='text-align:center; color:#888;'>"
-            f"{status} Task {idx + 1} of {total} &nbsp;·&nbsp; <code style='color:#aaa'>{conv_id}</code>"
-            f"</p>",
+            f"{status} Task {idx + 1} of {total} &nbsp;·&nbsp; "
+            f"<code style='color:#aaa'>{conv_id}</code></p>",
             unsafe_allow_html=True,
         )
     with nav_r:
@@ -225,10 +196,7 @@ def annotate():
 
     with col_text:
         st.markdown("**Conversation**")
-        st.markdown(
-            f"<div class='conv-box'>{text}</div>",
-            unsafe_allow_html=True,
-        )
+        st.markdown(f"<div class='conv-box'>{text}</div>", unsafe_allow_html=True)
 
     with col_form:
         st.markdown("<div class='form-panel'>", unsafe_allow_html=True)
@@ -258,7 +226,10 @@ def annotate():
         if st.button(save_label, type="primary", disabled=(is_crisis is None)):
             annotations[conv_id] = {"is_crisis": is_crisis, "rating": rating}
             st.session_state.annotations = annotations
-            ls_set(f"annotations_{annotator}", annotations)
+            n_done = len(annotations)
+            # Auto-download backup every AUTO_SAVE_EVERY annotations
+            if n_done % AUTO_SAVE_EVERY == 0:
+                auto_download(annotator, annotations)
             if idx < total - 1:
                 st.session_state.idx += 1
             st.rerun()
@@ -266,7 +237,7 @@ def annotate():
         st.divider()
         st.caption(f"✅ {len(annotations)} / {total} saved")
         st.download_button(
-            "💾 Export CSV (backup)",
+            "💾 Download backup CSV",
             data=get_csv(annotations),
             file_name=f"{annotator}_annotations.csv",
             mime="text/csv",
@@ -276,6 +247,7 @@ def annotate():
 
     if len(annotations) == total:
         st.success("All done! Download your CSV above and send it back.")
+        auto_download(annotator, annotations)
 
 
 # ── Router ────────────────────────────────────────────────────────────────────
