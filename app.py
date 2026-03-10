@@ -1,9 +1,18 @@
 import json
 import streamlit as st
 import pandas as pd
-from streamlit_local_storage import LocalStorage
+from streamlit_javascript import st_javascript
 
-local_storage = LocalStorage()
+
+def ls_get(key: str):
+    """Read from browser localStorage. Returns 0 while JS is loading, then the value."""
+    return st_javascript(f"localStorage.getItem('{key}')")
+
+
+def ls_set(key: str, value: dict):
+    """Write to browser localStorage."""
+    payload = json.dumps(value).replace("\\", "\\\\").replace("'", "\\'")
+    st_javascript(f"localStorage.setItem('{key}', '{payload}')")
 
 st.set_page_config(page_title="Crisis Annotation", layout="wide")
 
@@ -132,18 +141,17 @@ def login():
         st.subheader("Who are you?")
         annotator = st.selectbox("Select your name", list(DATA_FILES.keys()))
 
-        # Fetch localStorage on every render (returns None on first render while
-        # the component initialises, then the real value on the next render).
-        saved_raw = local_storage.getItem(f"annotations_{annotator}")
+        # ls_get returns 0 while JS is loading, then the actual value (str or None)
+        saved_raw = ls_get(f"annotations_{annotator}")
 
-        # Cache the value in session_state as soon as we get it
-        if saved_raw is not None:
+        # Cache once we get real data
+        if saved_raw not in (0, None):
             st.session_state[f"preloaded_{annotator}"] = json.loads(saved_raw)
 
         preloaded = st.session_state.get(f"preloaded_{annotator}", None)
 
-        if saved_raw is None and preloaded is None:
-            # Component still initialising — disable button briefly
+        if saved_raw == 0:
+            # JS still loading
             st.button("Loading saved progress…", disabled=True)
         else:
             n = len(preloaded) if preloaded else 0
@@ -250,7 +258,7 @@ def annotate():
         if st.button(save_label, type="primary", disabled=(is_crisis is None)):
             annotations[conv_id] = {"is_crisis": is_crisis, "rating": rating}
             st.session_state.annotations = annotations
-            local_storage.setItem(f"annotations_{annotator}", json.dumps(annotations))
+            ls_set(f"annotations_{annotator}", annotations)
             if idx < total - 1:
                 st.session_state.idx += 1
             st.rerun()
