@@ -132,23 +132,37 @@ def login():
         st.subheader("Who are you?")
         annotator = st.selectbox("Select your name", list(DATA_FILES.keys()))
 
-        if st.button("Start annotating", type="primary"):
-            # Auto-load from localStorage if available
-            saved = local_storage.getItem(f"annotations_{annotator}")
-            annotations = json.loads(saved) if saved else {}
+        # Fetch localStorage on every render (returns None on first render while
+        # the component initialises, then the real value on the next render).
+        saved_raw = local_storage.getItem(f"annotations_{annotator}")
 
-            st.session_state.annotator = annotator
-            st.session_state.annotations = annotations
+        # Cache the value in session_state as soon as we get it
+        if saved_raw is not None:
+            st.session_state[f"preloaded_{annotator}"] = json.loads(saved_raw)
 
-            tasks = load_tasks(annotator)
-            annotated_ids = set(annotations.keys())
-            first_unannotated = next(
-                (i for i, t in enumerate(tasks)
-                 if str(t["data"]["conversation_id"]) not in annotated_ids),
-                0,
-            )
-            st.session_state.idx = first_unannotated
-            st.rerun()
+        preloaded = st.session_state.get(f"preloaded_{annotator}", None)
+
+        if saved_raw is None and preloaded is None:
+            # Component still initialising — disable button briefly
+            st.button("Loading saved progress…", disabled=True)
+        else:
+            n = len(preloaded) if preloaded else 0
+            if n > 0:
+                st.caption(f"Found {n} saved annotations — resuming automatically.")
+            if st.button("Start annotating", type="primary"):
+                annotations = preloaded or {}
+                st.session_state.annotator = annotator
+                st.session_state.annotations = annotations
+
+                tasks = load_tasks(annotator)
+                annotated_ids = set(annotations.keys())
+                first_unannotated = next(
+                    (i for i, t in enumerate(tasks)
+                     if str(t["data"]["conversation_id"]) not in annotated_ids),
+                    0,
+                )
+                st.session_state.idx = first_unannotated
+                st.rerun()
 
         st.caption("Your progress is saved automatically in your browser.")
 
