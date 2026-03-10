@@ -13,7 +13,6 @@ DATA_FILES = {
 }
 
 ACCENT = "#c0392b"
-AUTO_SAVE_EVERY = 10  # silently download a backup CSV every N annotations
 
 st.markdown(f"""
 <style>
@@ -143,7 +142,7 @@ def login():
             st.session_state.idx = first_unannotated
             st.rerun()
 
-        st.caption(f"Every {AUTO_SAVE_EVERY} annotations a backup CSV downloads automatically.")
+        st.caption("A backup CSV downloads automatically after every annotation.")
 
 
 # ── Annotation screen ─────────────────────────────────────────────────────────
@@ -226,10 +225,7 @@ def annotate():
         if st.button(save_label, type="primary", disabled=(is_crisis is None)):
             annotations[conv_id] = {"is_crisis": is_crisis, "rating": rating}
             st.session_state.annotations = annotations
-            n_done = len(annotations)
-            # Auto-download backup every AUTO_SAVE_EVERY annotations
-            if n_done % AUTO_SAVE_EVERY == 0:
-                auto_download(annotator, annotations)
+            auto_download(annotator, annotations)
             if idx < total - 1:
                 st.session_state.idx += 1
             st.rerun()
