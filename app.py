@@ -136,7 +136,7 @@ def get_csv(annotations: dict) -> str:
 def login():
     st.title("Crisis Annotation")
     st.markdown(
-        "<p style='color:#aaa; margin-top:-12px;'>Diplomatic conversations · 100 tasks per annotator</p>",
+        "<p style='color:#aaa; margin-top:-12px;'>Diplomatic conversations · 200 tasks per annotator</p>",
         unsafe_allow_html=True,
     )
     st.divider()
