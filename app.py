@@ -120,7 +120,7 @@ def save_annotation_to_sheet(annotator: str, conv_id: str, is_crisis: str, ratin
 
 # ── Data loading ──────────────────────────────────────────────────────────────
 
-@st.cache_data
+@st.cache_data(ttl=0)
 def load_tasks(annotator: str):
     with open(DATA_FILES[annotator], encoding="utf-8") as f:
         return json.load(f)
