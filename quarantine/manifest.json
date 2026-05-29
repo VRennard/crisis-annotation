@@ -1,0 +1,662 @@
+[
+  {
+    "jaccard": 0.939,
+    "file_a": {
+      "id": "1553260",
+      "folder": "crisis/6",
+      "nwords": 1542,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "22549",
+      "folder": "crisis/6",
+      "nwords": 1570,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.922,
+    "file_a": {
+      "id": "1552932",
+      "folder": "crisis/7",
+      "nwords": 449,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "22422",
+      "folder": "crisis/7",
+      "nwords": 447,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.856,
+    "file_a": {
+      "id": "1552977",
+      "folder": "crisis/7",
+      "nwords": 1035,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "22435",
+      "folder": "crisis/7",
+      "nwords": 1014,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.839,
+    "file_a": {
+      "id": "1553012",
+      "folder": "non_crisis",
+      "nwords": 262,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "22455",
+      "folder": "non_crisis",
+      "nwords": 281,
+      "in_ls": true
+    }
+  },
+  {
+    "jaccard": 0.833,
+    "file_a": {
+      "id": "1553407",
+      "folder": "crisis/8",
+      "nwords": 502,
+      "in_ls": true
+    },
+    "file_b": {
+      "id": "22600",
+      "folder": "crisis/8",
+      "nwords": 507,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.818,
+    "file_a": {
+      "id": "1553443",
+      "folder": "crisis/7",
+      "nwords": 451,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "22614",
+      "folder": "crisis/7",
+      "nwords": 437,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.806,
+    "file_a": {
+      "id": "22504",
+      "folder": "crisis/6",
+      "nwords": 1281,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "1553150",
+      "folder": "crisis/7",
+      "nwords": 1251,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.721,
+    "file_a": {
+      "id": "1552382",
+      "folder": "crisis/8",
+      "nwords": 5464,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "689",
+      "folder": "crisis/8",
+      "nwords": 5660,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.71,
+    "file_a": {
+      "id": "1552983",
+      "folder": "crisis/8",
+      "nwords": 727,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "22440",
+      "folder": "crisis/8",
+      "nwords": 677,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.646,
+    "file_a": {
+      "id": "1552410",
+      "folder": "crisis/7",
+      "nwords": 5066,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "717",
+      "folder": "crisis/7",
+      "nwords": 5215,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.644,
+    "file_a": {
+      "id": "1552400",
+      "folder": "crisis/7",
+      "nwords": 4198,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "707",
+      "folder": "crisis/7",
+      "nwords": 4253,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.635,
+    "file_a": {
+      "id": "1552388",
+      "folder": "crisis/8",
+      "nwords": 5416,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "695",
+      "folder": "crisis/8",
+      "nwords": 5418,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.634,
+    "file_a": {
+      "id": "1552401",
+      "folder": "crisis/7",
+      "nwords": 5659,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "708",
+      "folder": "crisis/7",
+      "nwords": 5756,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.633,
+    "file_a": {
+      "id": "1552399",
+      "folder": "crisis/7",
+      "nwords": 7272,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "706",
+      "folder": "crisis/7",
+      "nwords": 7280,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.632,
+    "file_a": {
+      "id": "1552385",
+      "folder": "crisis/8",
+      "nwords": 2176,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "692",
+      "folder": "crisis/9",
+      "nwords": 2245,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.628,
+    "file_a": {
+      "id": "1552387",
+      "folder": "crisis/8",
+      "nwords": 3246,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "694",
+      "folder": "crisis/8",
+      "nwords": 3286,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.627,
+    "file_a": {
+      "id": "1553385",
+      "folder": "crisis/5",
+      "nwords": 469,
+      "in_ls": true
+    },
+    "file_b": {
+      "id": "22591",
+      "folder": "crisis/5",
+      "nwords": 592,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.626,
+    "file_a": {
+      "id": "1552386",
+      "folder": "crisis/8",
+      "nwords": 2599,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "693",
+      "folder": "crisis/8",
+      "nwords": 2770,
+      "in_ls": true
+    }
+  },
+  {
+    "jaccard": 0.626,
+    "file_a": {
+      "id": "1552402",
+      "folder": "crisis/8",
+      "nwords": 3620,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "709",
+      "folder": "crisis/8",
+      "nwords": 4074,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.619,
+    "file_a": {
+      "id": "1552397",
+      "folder": "crisis/7",
+      "nwords": 7288,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "704",
+      "folder": "crisis/7",
+      "nwords": 7631,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.603,
+    "file_a": {
+      "id": "1552389",
+      "folder": "crisis/8",
+      "nwords": 4378,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "696",
+      "folder": "crisis/8",
+      "nwords": 4820,
+      "in_ls": true
+    }
+  },
+  {
+    "jaccard": 0.596,
+    "file_a": {
+      "id": "1552392",
+      "folder": "crisis/6",
+      "nwords": 2154,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "699",
+      "folder": "crisis/7",
+      "nwords": 2377,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.575,
+    "file_a": {
+      "id": "1552377",
+      "folder": "crisis/7",
+      "nwords": 8053,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "684",
+      "folder": "crisis/7",
+      "nwords": 8349,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.572,
+    "file_a": {
+      "id": "1552405",
+      "folder": "crisis/7",
+      "nwords": 2870,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "712",
+      "folder": "crisis/7",
+      "nwords": 3362,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.556,
+    "file_a": {
+      "id": "1552391",
+      "folder": "crisis/7",
+      "nwords": 1034,
+      "in_ls": true
+    },
+    "file_b": {
+      "id": "698",
+      "folder": "crisis/7",
+      "nwords": 1022,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.555,
+    "file_a": {
+      "id": "1552381",
+      "folder": "crisis/6",
+      "nwords": 3428,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "688",
+      "folder": "crisis/6",
+      "nwords": 3387,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.542,
+    "file_a": {
+      "id": "1553167",
+      "folder": "crisis/5",
+      "nwords": 331,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "22511",
+      "folder": "crisis/6",
+      "nwords": 187,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.54,
+    "file_a": {
+      "id": "1552375",
+      "folder": "crisis/7",
+      "nwords": 8564,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "682",
+      "folder": "crisis/7",
+      "nwords": 9004,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.54,
+    "file_a": {
+      "id": "1553448",
+      "folder": "crisis/7",
+      "nwords": 419,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "22616",
+      "folder": "crisis/7",
+      "nwords": 676,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.537,
+    "file_a": {
+      "id": "1552396",
+      "folder": "crisis/7",
+      "nwords": 5843,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "703",
+      "folder": "crisis/7",
+      "nwords": 6757,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.529,
+    "file_a": {
+      "id": "1552407",
+      "folder": "crisis/7",
+      "nwords": 3900,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "714",
+      "folder": "crisis/7",
+      "nwords": 4899,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.527,
+    "file_a": {
+      "id": "1552829",
+      "folder": "crisis/7",
+      "nwords": 869,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "22378",
+      "folder": "crisis/7",
+      "nwords": 745,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.525,
+    "file_a": {
+      "id": "1552380",
+      "folder": "crisis/6",
+      "nwords": 6980,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "687",
+      "folder": "crisis/7",
+      "nwords": 7692,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.513,
+    "file_a": {
+      "id": "1553086",
+      "folder": "crisis/6",
+      "nwords": 1006,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "22478",
+      "folder": "crisis/6",
+      "nwords": 554,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.51,
+    "file_a": {
+      "id": "1553043",
+      "folder": "crisis/7",
+      "nwords": 332,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "22467",
+      "folder": "crisis/7",
+      "nwords": 184,
+      "in_ls": true
+    }
+  },
+  {
+    "jaccard": 0.488,
+    "file_a": {
+      "id": "22386",
+      "folder": "crisis/5",
+      "nwords": 539,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "1552855",
+      "folder": "crisis/6",
+      "nwords": 1031,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.46,
+    "file_a": {
+      "id": "1552585",
+      "folder": "crisis/7",
+      "nwords": 1113,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "22238",
+      "folder": "crisis/7",
+      "nwords": 862,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.458,
+    "file_a": {
+      "id": "21218",
+      "folder": "non_crisis",
+      "nwords": 627,
+      "in_ls": true
+    },
+    "file_b": {
+      "id": "21220",
+      "folder": "non_crisis",
+      "nwords": 589,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.43,
+    "file_a": {
+      "id": "1552379",
+      "folder": "crisis/7",
+      "nwords": 4409,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "686",
+      "folder": "crisis/7",
+      "nwords": 3533,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.404,
+    "file_a": {
+      "id": "22434",
+      "folder": "crisis/5",
+      "nwords": 344,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "1552974",
+      "folder": "crisis/6",
+      "nwords": 795,
+      "in_ls": true
+    }
+  },
+  {
+    "jaccard": 0.361,
+    "file_a": {
+      "id": "1552390 (2)",
+      "folder": "crisis/7",
+      "nwords": 3472,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "697",
+      "folder": "crisis/8",
+      "nwords": 7501,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.355,
+    "file_a": {
+      "id": "22323",
+      "folder": "crisis/5",
+      "nwords": 77,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "1552713",
+      "folder": "crisis/6",
+      "nwords": 159,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.334,
+    "file_a": {
+      "id": "22260",
+      "folder": "crisis/5",
+      "nwords": 602,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "1552612",
+      "folder": "crisis/7",
+      "nwords": 1433,
+      "in_ls": false
+    }
+  },
+  {
+    "jaccard": 0.323,
+    "file_a": {
+      "id": "22604",
+      "folder": "crisis/5",
+      "nwords": 199,
+      "in_ls": false
+    },
+    "file_b": {
+      "id": "1553410",
+      "folder": "crisis/7",
+      "nwords": 578,
+      "in_ls": false
+    }
+  }
+]
