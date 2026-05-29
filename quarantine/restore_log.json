@@ -1,0 +1,354 @@
+[
+  {
+    "kept": "1553260",
+    "kept_folder": "crisis/6",
+    "quarantined": "22549",
+    "quarantined_folder": "crisis/6",
+    "jaccard": 0.939,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552932",
+    "kept_folder": "crisis/7",
+    "quarantined": "22422",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.922,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552977",
+    "kept_folder": "crisis/7",
+    "quarantined": "22435",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.856,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1553012",
+    "kept_folder": "non_crisis",
+    "quarantined": "22455",
+    "quarantined_folder": "non_crisis",
+    "jaccard": 0.839,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1553407",
+    "kept_folder": "crisis/8",
+    "quarantined": "22600",
+    "quarantined_folder": "crisis/8",
+    "jaccard": 0.833,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1553443",
+    "kept_folder": "crisis/7",
+    "quarantined": "22614",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.818,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1553150",
+    "kept_folder": "crisis/7",
+    "quarantined": "22504",
+    "quarantined_folder": "crisis/6",
+    "jaccard": 0.806,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552382",
+    "kept_folder": "crisis/8",
+    "quarantined": "689",
+    "quarantined_folder": "crisis/8",
+    "jaccard": 0.721,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552983",
+    "kept_folder": "crisis/8",
+    "quarantined": "22440",
+    "quarantined_folder": "crisis/8",
+    "jaccard": 0.71,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552410",
+    "kept_folder": "crisis/7",
+    "quarantined": "717",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.646,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552400",
+    "kept_folder": "crisis/7",
+    "quarantined": "707",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.644,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552388",
+    "kept_folder": "crisis/8",
+    "quarantined": "695",
+    "quarantined_folder": "crisis/8",
+    "jaccard": 0.635,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552401",
+    "kept_folder": "crisis/7",
+    "quarantined": "708",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.634,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552399",
+    "kept_folder": "crisis/7",
+    "quarantined": "706",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.633,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552385",
+    "kept_folder": "crisis/8",
+    "quarantined": "692",
+    "quarantined_folder": "crisis/9",
+    "jaccard": 0.632,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552387",
+    "kept_folder": "crisis/8",
+    "quarantined": "694",
+    "quarantined_folder": "crisis/8",
+    "jaccard": 0.628,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1553385",
+    "kept_folder": "crisis/5",
+    "quarantined": "22591",
+    "quarantined_folder": "crisis/5",
+    "jaccard": 0.627,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552386",
+    "kept_folder": "crisis/8",
+    "quarantined": "693",
+    "quarantined_folder": "crisis/8",
+    "jaccard": 0.626,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552402",
+    "kept_folder": "crisis/8",
+    "quarantined": "709",
+    "quarantined_folder": "crisis/8",
+    "jaccard": 0.626,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552397",
+    "kept_folder": "crisis/7",
+    "quarantined": "704",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.619,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552389",
+    "kept_folder": "crisis/8",
+    "quarantined": "696",
+    "quarantined_folder": "crisis/8",
+    "jaccard": 0.603,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552392",
+    "kept_folder": "crisis/6",
+    "quarantined": "699",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.596,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552377",
+    "kept_folder": "crisis/7",
+    "quarantined": "684",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.575,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552405",
+    "kept_folder": "crisis/7",
+    "quarantined": "712",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.572,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552391",
+    "kept_folder": "crisis/7",
+    "quarantined": "698",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.556,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552381",
+    "kept_folder": "crisis/6",
+    "quarantined": "688",
+    "quarantined_folder": "crisis/6",
+    "jaccard": 0.555,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1553167",
+    "kept_folder": "crisis/5",
+    "quarantined": "22511",
+    "quarantined_folder": "crisis/6",
+    "jaccard": 0.542,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552375",
+    "kept_folder": "crisis/7",
+    "quarantined": "682",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.54,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1553448",
+    "kept_folder": "crisis/7",
+    "quarantined": "22616",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.54,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552396",
+    "kept_folder": "crisis/7",
+    "quarantined": "703",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.537,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552407",
+    "kept_folder": "crisis/7",
+    "quarantined": "714",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.529,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552829",
+    "kept_folder": "crisis/7",
+    "quarantined": "22378",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.527,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552380",
+    "kept_folder": "crisis/6",
+    "quarantined": "687",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.525,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1553086",
+    "kept_folder": "crisis/6",
+    "quarantined": "22478",
+    "quarantined_folder": "crisis/6",
+    "jaccard": 0.513,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1553043",
+    "kept_folder": "crisis/7",
+    "quarantined": "22467",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.51,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552855",
+    "kept_folder": "crisis/6",
+    "quarantined": "22386",
+    "quarantined_folder": "crisis/5",
+    "jaccard": 0.488,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552585",
+    "kept_folder": "crisis/7",
+    "quarantined": "22238",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.46,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "21218",
+    "kept_folder": "non_crisis",
+    "quarantined": "21220",
+    "quarantined_folder": "non_crisis",
+    "jaccard": 0.458,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552379",
+    "kept_folder": "crisis/7",
+    "quarantined": "686",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.43,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552974",
+    "kept_folder": "crisis/6",
+    "quarantined": "22434",
+    "quarantined_folder": "crisis/5",
+    "jaccard": 0.404,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "697",
+    "kept_folder": "crisis/8",
+    "quarantined": "1552390 (2)",
+    "quarantined_folder": "crisis/7",
+    "jaccard": 0.361,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552713",
+    "kept_folder": "crisis/6",
+    "quarantined": "22323",
+    "quarantined_folder": "crisis/5",
+    "jaccard": 0.355,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1552612",
+    "kept_folder": "crisis/7",
+    "quarantined": "22260",
+    "quarantined_folder": "crisis/5",
+    "jaccard": 0.334,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  },
+  {
+    "kept": "1553410",
+    "kept_folder": "crisis/7",
+    "quarantined": "22604",
+    "quarantined_folder": "crisis/5",
+    "jaccard": 0.323,
+    "reason": "REVIEW - ambiguous pair, kept by ID rank/length"
+  }
+]

@@ -1,0 +1,189 @@
+file_removed,folder_removed,file_kept,folder_kept,reason,batch
+conversation_1552785a,newrun/crisis/7,conversation_1552785b,newrun/crisis/7,TRUNCATION - a is cut-off prefix of b (140w vs 577w),1
+conversation_1553044,newrun/crisis/8,conversation_1552384,newrun/crisis/8,TRUNCATION - near-identical 94pct only every one vs everyone,1
+conversation_22410,newrun/crisis/5,conversation_1552906,newrun/crisis/5,FOOTNOTES - hearings3 bill4 embedded in 22xxx,1
+conversation_22306,newrun/crisis/7,conversation_1552667,newrun/crisis/7,FOOTNOTES+DASH - footnotes and dash encoding noise same ending,1
+conversation_22420,newrun/crisis/7,conversation_1552931,newrun/crisis/7,FOOTNOTES+DASH - cambodia.3 and dash noise same ending,1
+conversation_22599,newrun/crisis/5,conversation_1553405,newrun/crisis/5,DASH ENCODING - dash noise only same ending,1
+conversation_22534,newrun/crisis/6,conversation_1553212,newrun/crisis/6,DASH ENCODING - dash noise only same ending,1
+conversation_22551,newrun/crisis/5,conversation_1553259,newrun/crisis/6,OMISSION - 22551 has omitted markers cross-folder,1
+conversation_22391,newrun/crisis/6,conversation_1552865,newrun/crisis/6,OMISSION - 22391 has omitted markers,1
+conversation_22586,newrun/crisis/6,conversation_1553370,newrun/crisis/6,OMISSION - 22586 has omitted markers,1
+conversation_22358,newrun/crisis/7,conversation_1552782,newrun/crisis/7,OMISSION - 22358 has omitted markers,1
+conversation_22601,newrun/crisis/7,conversation_1553404,newrun/crisis/7,OMISSION - 22601 has omitted markers,1
+conversation_22603,newrun/crisis/7,conversation_1553410,newrun/crisis/7,OMISSION - 22603 has omitted markers,1
+conversation_22454,newrun/crisis/5,conversation_1553011,newrun/crisis/5,FOOTNOTES - directive.2 mi6.3 in 22454,2
+conversation_22451,newrun/crisis/7,conversation_1553006,newrun/crisis/7,FOOTNOTES+DASH - footnote noise in 22451 same ending,2
+conversation_1553233,newrun/non_crisis,conversation_22539,newrun/non_crisis,ENCODING ARTIFACT - broken unicode land\ufffdscape in 1553233,2
+conversation_22633,newrun/non_crisis,conversation_1553554,newrun/non_crisis,OMISSION - 22633 has omitted markers,2
+conversation_22381,newrun/crisis/5,conversation_1552839,newrun/crisis/5,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22567,newrun/crisis/6,conversation_1553300,newrun/crisis/6,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22400,newrun/crisis/6,conversation_1552899,newrun/crisis/6,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22573,newrun/crisis/5,conversation_1553324,newrun/crisis/5,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22488,newrun/crisis/6,conversation_1553121,newrun/crisis/6,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22428,newrun/crisis/7,conversation_1552953,newrun/crisis/7,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22496,newrun/crisis/6,conversation_1553134,newrun/crisis/6,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22598,newrun/non_crisis,conversation_1553402,newrun/non_crisis,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22560,newrun/crisis/6,conversation_1553275,newrun/crisis/6,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22566,newrun/crisis/5,conversation_1553295,newrun/crisis/5,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22352,newrun/non_crisis,conversation_1552756,newrun/non_crisis,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22457,newrun/crisis/7,conversation_1553020,newrun/crisis/7,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_1553022a,newrun/crisis/5,conversation_22458,newrun/crisis/5,ENCODING - same tail high Jaccard kept longer,3
+conversation_22498,newrun/crisis/7,conversation_1553138,newrun/crisis/7,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22582,newrun/crisis/5,conversation_1553347,newrun/crisis/5,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22583,newrun/crisis/7,conversation_1553348,newrun/crisis/7,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22328,newrun/crisis/5,conversation_1552733,newrun/crisis/5,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22404,newrun/crisis/7,conversation_1552905,newrun/crisis/7,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22550,newrun/crisis/5,conversation_1553258,newrun/crisis/5,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_691,newrun/crisis/8,conversation_1552384,newrun/crisis/8,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22403,newrun/crisis/6,conversation_1552901,newrun/crisis/6,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_718,newrun/crisis/5,conversation_1552411,newrun/crisis/5,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22503,newrun/crisis/6,conversation_1553148,newrun/crisis/6,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22494,newrun/crisis/7,conversation_1553131,newrun/crisis/7,ENCODING - same tail high Jaccard kept 155xxxx,3
+conversation_22620,newrun/crisis/8,conversation_1553476,newrun/crisis/8,FOOTNOTES - superscript numbers in 22620,3
+conversation_22615,newrun/crisis/5,conversation_1553442,newrun/crisis/5,FOOTNOTES - superscript numbers in 22615,3
+conversation_22461,newrun/crisis/8,conversation_1553029,newrun/crisis/8,FOOTNOTES - superscript numbers in 22461,3
+conversation_22497,newrun/crisis/7,conversation_1553133,newrun/crisis/7,FOOTNOTES - superscript numbers in 22497,3
+conversation_22362,newrun/crisis/5,conversation_1552792,newrun/crisis/5,FOOTNOTES - superscript numbers in 22362,3
+conversation_22474,newrun/crisis/6,conversation_1553078,newrun/crisis/6,FOOTNOTES - superscript numbers in 22474,3
+conversation_22345,newrun/crisis/5,conversation_1552751,newrun/crisis/5,FOOTNOTES - superscript numbers in 22345,3
+conversation_22572,newrun/crisis/6,conversation_1553323,newrun/crisis/6,FOOTNOTES - superscript numbers in 22572,3
+conversation_22439,newrun/crisis/5,conversation_1552979,newrun/crisis/5,FOOTNOTES - superscript numbers in 22439,3
+conversation_22460,newrun/crisis/7,conversation_1553027,newrun/crisis/7,FOOTNOTES - superscript numbers in 22460,3
+conversation_22459,newrun/crisis/8,conversation_1553026,newrun/crisis/8,FOOTNOTES - superscript numbers in 22459,3
+conversation_22555,newrun/crisis/5,conversation_1553273,newrun/crisis/5,FOOTNOTES - superscript numbers in 22555,3
+conversation_22441,newrun/non_crisis,conversation_1552984,newrun/non_crisis,FOOTNOTES - superscript numbers in 22441,3
+conversation_22447,newrun/crisis/7,conversation_1552995,newrun/crisis/7,FOOTNOTES - superscript numbers in 22447,3
+conversation_22584,newrun/crisis/6,conversation_1553350,newrun/crisis/6,FOOTNOTES - superscript numbers in 22584,3
+conversation_22329,newrun/crisis/7,conversation_1552732,newrun/crisis/7,FOOTNOTES - superscript numbers in 22329,3
+conversation_22363,newrun/crisis/6,conversation_1552796,newrun/crisis/6,FOOTNOTES - superscript numbers in 22363,3
+conversation_22349,newrun/crisis/7,conversation_1552754,newrun/crisis/7,FOOTNOTES - superscript numbers in 22349,3
+conversation_22636,newrun/crisis/6,conversation_1553567,newrun/crisis/6,FOOTNOTES - superscript numbers in 22636,3
+conversation_22485,newrun/crisis/6,conversation_1553118,newrun/crisis/6,FOOTNOTES - superscript numbers in 22485,3
+conversation_22398,newrun/crisis/7,conversation_1552896,newrun/crisis/7,FOOTNOTES - superscript numbers in 22398,3
+conversation_22587,newrun/crisis/5,conversation_1553371,newrun/crisis/5,FOOTNOTES - superscript numbers in 22587,3
+conversation_22578,newrun/crisis/6,conversation_1553334,newrun/crisis/6,FOOTNOTES - superscript numbers in 22578,3
+conversation_22373,newrun/crisis/6,conversation_1552816,newrun/crisis/6,FOOTNOTES - superscript numbers in 22373,3
+conversation_22424,newrun/crisis/6,conversation_1552941,newrun/crisis/6,FOOTNOTES - superscript numbers in 22424,3
+conversation_22475,newrun/crisis/6,conversation_1553082,newrun/crisis/6,FOOTNOTES - superscript numbers in 22475,3
+conversation_22525,newrun/crisis/7,conversation_1553201,newrun/crisis/7,FOOTNOTES - superscript numbers in 22525,3
+conversation_22581,newrun/crisis/6,conversation_1553346,newrun/crisis/6,FOOTNOTES - superscript numbers in 22581,3
+conversation_22359,newrun/crisis/7,conversation_1552785b,newrun/crisis/7,FOOTNOTES - superscript numbers in 22359,3
+conversation_22322,newrun/crisis/7,conversation_1552715,newrun/crisis/7,FOOTNOTES - superscript numbers in 22322,3
+conversation_22297,newrun/crisis/7,conversation_1552646,newrun/crisis/7,FOOTNOTES - superscript numbers in 22297,3
+conversation_22377,newrun/non_crisis,conversation_1552831,newrun/non_crisis,FOOTNOTES - superscript numbers in 22377,3
+conversation_22608,newrun/crisis/6,conversation_1553423,newrun/crisis/6,FOOTNOTES - superscript numbers in 22608,3
+conversation_22269,newrun/crisis/8,conversation_1552617,newrun/crisis/8,FOOTNOTES - superscript numbers in 22269,3
+conversation_22399,newrun/crisis/6,conversation_1552897,newrun/crisis/6,FOOTNOTES - superscript numbers in 22399,3
+conversation_22387,newrun/crisis/7,conversation_1552856,newrun/crisis/7,FOOTNOTES - superscript numbers in 22387,3
+conversation_1552394,newrun/crisis/7,conversation_701,newrun/crisis/7,FOOTNOTES - kept 3-digit version cleaner,3
+conversation_22469,newrun/crisis/8,conversation_1553050,newrun/crisis/8,FOOTNOTES - superscript numbers in 22469,3
+conversation_22493,newrun/crisis/7,conversation_1553129,newrun/crisis/7,FOOTNOTES - superscript numbers in 22493,3
+conversation_22580,newrun/crisis/7,conversation_1553340,newrun/crisis/7,FOOTNOTES - superscript numbers in 22580,3
+conversation_22301,newrun/crisis/6,conversation_1552661,newrun/crisis/6,FOOTNOTES - superscript numbers in 22301,3
+conversation_22425,newrun/crisis/7,conversation_1552946,newrun/crisis/7,FOOTNOTES - superscript numbers in 22425,3
+conversation_1552373,newrun/crisis/6,conversation_680,newrun/crisis/6,FOOTNOTES - kept 3-digit version cleaner,3
+conversation_22487,newrun/crisis/7,conversation_1553122,newrun/crisis/7,FOOTNOTES - superscript numbers in 22487,3
+conversation_700,newrun/crisis/7,conversation_1552393,newrun/crisis/7,FOOTNOTES - kept 155xxxx cleaner,3
+conversation_22500,newrun/crisis/6,conversation_1553140,newrun/crisis/6,FOOTNOTES - superscript numbers in 22500,3
+conversation_1552376,newrun/crisis/7,conversation_683,newrun/crisis/7,FOOTNOTES - kept 3-digit version cleaner,3
+conversation_22331,newrun/crisis/7,conversation_1552734,newrun/crisis/7,FOOTNOTES - superscript numbers in 22331,3
+conversation_1552408,newrun/crisis/6,conversation_715,newrun/crisis/6,FOOTNOTES - kept 3-digit version cleaner,3
+conversation_22299,newrun/crisis/7,conversation_1552653,newrun/crisis/7,FOOTNOTES - superscript numbers in 22299,3
+conversation_22597,newrun/crisis/5,conversation_1553403,newrun/crisis/5,FOOTNOTES - superscript numbers in 22597,3
+conversation_22291,newrun/crisis/7,conversation_1552635,newrun/crisis/7,FOOTNOTES - superscript numbers in 22291,3
+conversation_22523,newrun/crisis/7,conversation_1553198,newrun/crisis/7,FOOTNOTES - superscript numbers in 22523,3
+conversation_22385,newrun/non_crisis,conversation_1552845,newrun/non_crisis,FOOTNOTES - superscript numbers in 22385,3
+conversation_22211,newrun/crisis/6,conversation_1552561,newrun/crisis/6,FOOTNOTES - superscript numbers in 22211,3
+conversation_22543,newrun/crisis/7,conversation_1553241,newrun/crisis/7,FOOTNOTES - superscript numbers in 22543,3
+conversation_22339,newrun/crisis/6,conversation_1552747,newrun/crisis/6,FOOTNOTES - superscript numbers in 22339,3
+conversation_22263,newrun/crisis/7,conversation_1552616,newrun/crisis/7,FOOTNOTES - superscript numbers in 22263,3
+conversation_1552383,newrun/crisis/9,conversation_690,newrun/crisis/9,FOOTNOTES - kept 3-digit version cleaner,3
+conversation_22004,newrun/crisis/7,conversation_22007,newrun/crisis/7,FOOTNOTES - superscript numbers in 22004,3
+conversation_22261,newrun/crisis/7,conversation_1552612,newrun/crisis/7,FOOTNOTES - superscript numbers in 22261,3
+conversation_22484,newrun/crisis/6,conversation_1553114,newrun/crisis/6,FOOTNOTES - superscript numbers in 22484,3
+conversation_22512,newrun/crisis/7,conversation_1553168,newrun/crisis/7,FOOTNOTES - superscript numbers in 22512,3
+conversation_22509,newrun/crisis/7,conversation_1553155,newrun/crisis/7,FOOTNOTES - superscript numbers in 22509,3
+conversation_1553422,newrun/crisis/8,conversation_22606,newrun/crisis/8,FOOTNOTES - kept 22606 cleaner,3
+conversation_22517,newrun/crisis/5,conversation_1553182,newrun/crisis/5,FOOTNOTES - superscript numbers in 22517,3
+conversation_22317,newrun/crisis/7,conversation_1552699,newrun/crisis/7,OMISSION - 22317 has omitted markers,3
+conversation_22516,newrun/crisis/6,conversation_1553173,newrun/crisis/6,OMISSION - 22516 has omitted markers,3
+conversation_22501,newrun/crisis/5,conversation_1553142,newrun/crisis/5,OMISSION - 22501 has omitted markers,3
+conversation_22397,newrun/crisis/6,conversation_1552893,newrun/crisis/6,OMISSION - 22397 has omitted markers,3
+conversation_22427,newrun/crisis/7,conversation_1552949,newrun/crisis/7,OMISSION - 22427 has omitted markers,3
+conversation_22449,newrun/crisis/7,conversation_1552996,newrun/crisis/7,OMISSION - 22449 has omitted markers,3
+conversation_22575,newrun/crisis/7,conversation_1553325,newrun/crisis/7,OMISSION - 22575 has omitted markers,3
+conversation_22506,newrun/crisis/7,conversation_1553152 (2),newrun/crisis/7,OMISSION - 22506 has omitted markers,3
+conversation_22417,newrun/crisis/7,conversation_1552923,newrun/crisis/7,OMISSION - 22417 has omitted markers,3
+conversation_22337,newrun/crisis/7,conversation_1552746,newrun/crisis/7,OMISSION - 22337 has omitted markers,3
+conversation_22396,newrun/crisis/7,conversation_1552892a,newrun/crisis/7,OMISSION - 22396 has omitted markers,3
+conversation_22426,newrun/crisis/5,conversation_1552947,newrun/crisis/5,OMISSION - 22426 has omitted markers,3
+conversation_22390,newrun/crisis/7,conversation_1552864,newrun/crisis/7,OMISSION - 22390 has omitted markers,3
+conversation_22354,newrun/crisis/5,conversation_1552768b,newrun/crisis/5,OMISSION - 22354 has omitted markers,3
+conversation_22595,newrun/crisis/5,conversation_1553400,newrun/crisis/5,OMISSION - 22595 has omitted markers,3
+conversation_22473,newrun/crisis/5,conversation_1553076a,newrun/crisis/5,OMISSION - 22473 has omitted markers,3
+conversation_22579,newrun/crisis/6,conversation_1553335,newrun/crisis/6,OMISSION - 22579 has omitted markers,3
+conversation_22452,newrun/crisis/7,conversation_1553004,newrun/crisis/7,OMISSION - 22452 has omitted markers,3
+conversation_22450,newrun/crisis/7,conversation_1553003,newrun/crisis/7,OMISSION - 22450 has omitted markers,3
+conversation_22537,newrun/crisis/5,conversation_1553223,newrun/crisis/5,OMISSION - 22537 has omitted markers,3
+conversation_22533,newrun/crisis/7,conversation_1553211b,newrun/crisis/7,OMISSION - 22533 has omitted markers,3
+conversation_22412,newrun/crisis/5,conversation_1552912,newrun/crisis/5,OMISSION - 22412 has omitted markers,3
+conversation_22556,newrun/crisis/5,conversation_1553274,newrun/crisis/5,OMISSION - 22556 has omitted markers,3
+conversation_22448,newrun/crisis/7,conversation_1552998,newrun/crisis/7,OMISSION - 22448 has omitted markers,3
+conversation_22552,newrun/crisis/5,conversation_1553263,newrun/crisis/5,OMISSION - 22552 has omitted markers,3
+conversation_22482,newrun/crisis/7,conversation_1553109,newrun/crisis/7,OMISSION - 22482 has omitted markers,3
+conversation_22342,newrun/crisis/7,conversation_1552749,newrun/crisis/7,OMISSION - 22342 has omitted markers,3
+conversation_22542,newrun/crisis/7,conversation_1553241,newrun/crisis/7,OMISSION - 22542 has omitted markers,3
+conversation_22559,newrun/crisis/5,conversation_1553276,newrun/crisis/5,OMISSION - 22559 has omitted markers,3
+conversation_22444,newrun/crisis/7,conversation_1552988,newrun/crisis/7,OMISSION - 22444 has omitted markers,3
+conversation_22384,newrun/crisis/7,conversation_1552844,newrun/crisis/7,OMISSION - 22384 has omitted markers,3
+conversation_22370,newrun/crisis/7,conversation_1552805,newrun/crisis/7,OMISSION - 22370 has omitted markers,3
+conversation_22365,newrun/crisis/5,conversation_1552798,newrun/crisis/5,OMISSION - 22365 has omitted markers,3
+conversation_22462,newrun/crisis/7,conversation_1553033 (2),newrun/crisis/7,OMISSION - 22462 has omitted markers,3
+conversation_22548,newrun/crisis/5,conversation_1553259,newrun/crisis/5,OMISSION - 22548 has omitted markers,3
+conversation_22374,newrun/crisis/6,conversation_1552822,newrun/crisis/6,OMISSION - 22374 has omitted markers,3
+conversation_22408,newrun/crisis/6,conversation_1552907,newrun/crisis/6,OMISSION - 22408 has omitted markers,3
+conversation_22549,crisis/6,conversation_1553260,crisis/6,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.939),4
+conversation_22422,crisis/7,conversation_1552932,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.922),4
+conversation_22435,crisis/7,conversation_1552977,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.856),4
+conversation_22455,non_crisis,conversation_1553012,non_crisis,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.839),4
+conversation_22600,crisis/8,conversation_1553407,crisis/8,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.833),4
+conversation_22614,crisis/7,conversation_1553443,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.818),4
+conversation_22504,crisis/6,conversation_1553150,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.806),4
+conversation_689,crisis/8,conversation_1552382,crisis/8,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.721),4
+conversation_22440,crisis/8,conversation_1552983,crisis/8,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.71),4
+conversation_717,crisis/7,conversation_1552410,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.646),4
+conversation_707,crisis/7,conversation_1552400,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.644),4
+conversation_695,crisis/8,conversation_1552388,crisis/8,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.635),4
+conversation_708,crisis/7,conversation_1552401,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.634),4
+conversation_706,crisis/7,conversation_1552399,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.633),4
+conversation_692,crisis/9,conversation_1552385,crisis/8,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.632),4
+conversation_694,crisis/8,conversation_1552387,crisis/8,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.628),4
+conversation_22591,crisis/5,conversation_1553385,crisis/5,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.627),4
+conversation_693,crisis/8,conversation_1552386,crisis/8,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.626),4
+conversation_709,crisis/8,conversation_1552402,crisis/8,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.626),4
+conversation_704,crisis/7,conversation_1552397,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.619),4
+conversation_696,crisis/8,conversation_1552389,crisis/8,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.603),4
+conversation_699,crisis/7,conversation_1552392,crisis/6,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.596),4
+conversation_684,crisis/7,conversation_1552377,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.575),4
+conversation_712,crisis/7,conversation_1552405,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.572),4
+conversation_698,crisis/7,conversation_1552391,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.556),4
+conversation_688,crisis/6,conversation_1552381,crisis/6,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.555),4
+conversation_22511,crisis/6,conversation_1553167,crisis/5,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.542),4
+conversation_682,crisis/7,conversation_1552375,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.54),4
+conversation_22616,crisis/7,conversation_1553448,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.54),4
+conversation_703,crisis/7,conversation_1552396,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.537),4
+conversation_714,crisis/7,conversation_1552407,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.529),4
+conversation_22378,crisis/7,conversation_1552829,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.527),4
+conversation_687,crisis/7,conversation_1552380,crisis/6,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.525),4
+conversation_22478,crisis/6,conversation_1553086,crisis/6,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.513),4
+conversation_22467,crisis/7,conversation_1553043,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.51),4
+conversation_22386,crisis/5,conversation_1552855,crisis/6,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.488),4
+conversation_22238,crisis/7,conversation_1552585,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.46),4
+conversation_21220,non_crisis,conversation_21218,non_crisis,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.458),4
+conversation_686,crisis/7,conversation_1552379,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.43),4
+conversation_22434,crisis/5,conversation_1552974,crisis/6,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.404),4
+conversation_1552390 (2),crisis/7,conversation_697,crisis/8,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.361),4
+conversation_22323,crisis/5,conversation_1552713,crisis/6,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.355),4
+conversation_22260,crisis/5,conversation_1552612,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.334),4
+conversation_22604,crisis/5,conversation_1553410,crisis/7,QUARANTINE - ambiguous pair kept by ID rank no clear signal (Jac 0.323),4
